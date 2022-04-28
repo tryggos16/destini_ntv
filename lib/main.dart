@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'story_brain.dart';
 
 
-void main() => runApp(Destini());
+void main() => runApp(const Destini());
 
 
 class Destini extends StatelessWidget {
@@ -56,7 +56,7 @@ class _StoryPageState extends State<StoryPage> {
                     //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
                     storyBrain.getStory(),
                     style: const TextStyle(
-                      fontSize: 25.0,
+                      fontSize: 35.0,
                     ),
                   ),
                 ),

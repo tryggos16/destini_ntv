@@ -2,7 +2,12 @@ import 'story.dart';
 
 class StoryBrain {
 
-   List<Story> storydata = [
+   final List<Story> _storyData = [
+
+     // StoryTitle.
+     // Choice1.
+     // Choice2.
+
     Story(
       'you come home from work',
       'play games',
@@ -35,22 +40,18 @@ class StoryBrain {
 
   ];
 
-   int storyNum = 0;
+   int _storyNum = 0;
 
    String getStory() {
-     return storydata[storyNum].storyTitle;
+     return _storyData[_storyNum].storyTitle;
    }
 
-  String getstuff1(){
-    return storydata[storyNum].storyTitle;
-  }
-
   String getChoice1() {
-    return storydata[storyNum].choice1;
+    return _storyData[_storyNum].choice1;
   }
 
   String getChoice2() {
-    return storydata[storyNum].choice2;
+    return _storyData[_storyNum].choice2;
   }
 
   void nextStory(int choice) {
@@ -58,15 +59,15 @@ class StoryBrain {
       throw Exception('Invalid choice. Expected 1 or 2.');
     }
 
-    switch (storyNum) {
+    switch (_storyNum) {
       case 0:
-        storyNum = choice == 1 ? 2 : 1;
+        _storyNum = choice == 1 ? 2 : 1;
         break;
       case 1:
-        storyNum = choice == 1 ? 2 : 3;
+        _storyNum = choice == 1 ? 2 : 3;
         break;
       case 2:
-        storyNum = choice == 1 ? 5 : 4;
+        _storyNum = choice == 1 ? 5 : 4;
         break;
       case 3:
       case 4:
@@ -79,10 +80,10 @@ class StoryBrain {
   }
 
   void restart() {
-    storyNum = 0;
+    _storyNum = 0;
   }
 
   bool shouldBeVisible() {
-    return storyNum >= 0 && storyNum < 3;
+    return _storyNum >= 0 && _storyNum < 3;
   }
 }
